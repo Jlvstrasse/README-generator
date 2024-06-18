@@ -1,6 +1,5 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
-const inquirer = require('inquirer');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -68,6 +67,7 @@ ${answers.description}
 - [License](#license)
 - [Contributing](#contributing)
 - [Tests](#tests)
+- [Questions](#questions)
 
 ## Installation
 ${answers.installation}
@@ -83,6 +83,9 @@ ${answers.contributing}
 
 ## Tests
 ${answers.tests}
+
+## Questions
+    If you have any questions about the project, please feel free to contact me at [${answers.email}](mailto:${answers.email}). You can also find more of my work at [${answers.github}](https://github.com/${answers.github}).
     `;
 }
 
@@ -97,10 +100,16 @@ function writeToFile(fileName, data) {
 }
 
 // TODO: Create a function to initialize app
-function init() {
-    inquirer.prompt(questions).then((answers) => {
+async function init() {
+    const inquirer = await import('inquirer');
+    inquirer.default.prompt(questions).then((answers) => {
         const readmeContent = generateReadme(answers);
         writeToFile('README.md', readmeContent);
-        }
-    )};
+    });
+}
+
+// Function call to initialize app
+init();
+
+
 
