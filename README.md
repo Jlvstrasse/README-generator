@@ -9,7 +9,7 @@ An easy tool to help quickly create a professional README
 ## Video Walkthrough
 https://drive.google.com/file/d/1Fia9ExHFUoaCC0E6IWdKy9_MdrHEPnfM/view
 
-![README-Prompts](../README-generator/picure/screenshot.png)
+![README-Prompts](./README-generator/picure/screenshot.png)
 
 ## Table of Contents
 - [Installation](#installation)
